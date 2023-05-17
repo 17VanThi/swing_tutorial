@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUI extends JPanel {
-    JButton button1;
+    //JButton button2;
     JButton button2;
     JButton button3;
     JButton button4;
@@ -24,33 +24,12 @@ public class GUI extends JPanel {
         this.setPreferredSize(new Dimension(width,height));
 
         setLayout(null);
-        button1 = new JButton("button 1");
-        button1.setBounds(200,50,100,40);
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("clicked button1");
-            }
-        });
-
-        button2 = new JButton("button 2");
-        button2.setBounds(300,50,100,40);
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("clicked button2");
-            }
-        });
-
-        button3 = new JButton("button 3");
-        button3.setBounds(400,50,100,40);
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("clicked button3");
-            }
-        });
-
+        addButton("1",150,50,100,40);
+        addButton("2",250,50,100,40);
+        addButton("3",350,50,100,40);
+        addButton("4",150,90,100,40);
+        addButton("5",250,90,100,40);
+        addButton("6",350,90,100,40);
         button4 = new JButton("button 4");
         button4.setBounds(200,90,100,40);
         button4.addActionListener(new ActionListener() {
@@ -109,15 +88,23 @@ public class GUI extends JPanel {
             }
         });
 
-        add(button1);
-        add(button2);
-        add(button3);
-        add(button4);
-        add(button5);
-        add(button6);
         add(button7);
         add(button8);
         add(button9);
         add(button0);
     }
+
+
+    public void addButton(String text,int x , int y, int width, int height){
+        JButton newButton = new JButton(text);
+        newButton.setBounds(x,y,width,height);
+        newButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(text);
+            }
+        });
+        add(newButton);
+    }
+
 }

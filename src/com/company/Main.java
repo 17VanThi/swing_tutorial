@@ -9,7 +9,7 @@ public class Main {
         System.out.println("its working");
         JFrame frame = new JFrame("Demo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GUI myGui = new GUI(300,400);
+        GUI myGui = new GUI(600,300);
         frame.add(myGui);
         frame.pack();
         frame.setVisible(true);
